@@ -10,12 +10,12 @@ const Navbar = () => {
         </div>
         <div  className='relative search flex items-center'>
           <BiSearch className='absolute left-4 top-1/2 transform -translate-y-1/2 text-xl text-gray-500' />
-          <input type="text" placeholder='search for products' className='pl-12 pr-10 py-3 w-130 rounded-full border-2 border-white focus:outline-none' />
+          <input type="text" placeholder='search for products' className='pl-12 pr-10 py-3 w-130 rounded-full border-2 border-white bg-white focus:outline-none' />
         </div>
-        <div>
-          <BiCart />
-          <span>0</span>
-          <BiUser />
+        <div className=' relative flex items-center space-x-8'>
+          <BiCart className=' text-3xl text-white'/>
+          <span className='absolute -top-2 right-5 bg-red-500 text-white text-xs h-5 w-5 flex items-center justify-center rounded-full'>0</span>
+          <BiUser className='text-3xl text-white'/>
         </div>
       </div>
     </div>
