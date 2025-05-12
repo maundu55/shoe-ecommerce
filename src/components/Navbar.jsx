@@ -1,15 +1,21 @@
 import React from 'react'
-import { BiSearch } from 'react-icons/bi'
+import { BiCart, BiSearch, BiUser } from 'react-icons/bi'
 
 const Navbar = () => {
   return (
     <div>
-      <div className='navbar'>
+      <div className='navbar flex justify-between items-center px-14 py-6 w-full z-50 transiton-all duration-500 bg-gradient-to-r from-[#0f0fd7] via-[#2c67f2] to-[#00d4ff]'> 
         <div>
-          <h2>LOGO HERE</h2>
+          <h2 className='text-2xl font-semibold text-white'>LOGO HERE</h2>
+        </div>
+        <div  className='relative search flex items-center'>
+          <BiSearch className='absolute left-4 top-1/2 transform -translate-y-1/2 text-xl text-gray-500' />
+          <input type="text" placeholder='search for products' className='pl-12 pr-10 py-3 w-130 rounded-full border-2 border-white focus:outline-none' />
         </div>
         <div>
-          <BiSearch />
+          <BiCart />
+          <span>0</span>
+          <BiUser />
         </div>
       </div>
     </div>
