@@ -1,6 +1,8 @@
 import Navbar from "./components/Navbar"
-import { Routes, Route } from "react-router-dom"
 import Homepage from "./pages/Homepage"
+import Cart from "./pages/cart/Cart"
+import { Routes, Route } from "react-router-dom"
+
 import ProductDetails from "./pages/ProductDetails"
 
 const App = () => {
@@ -10,6 +12,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Homepage/>}/>
         <Route path='/product/:id' element={<ProductDetails />}/>
+        <Route path='/cart' element={<Cart />}/>
       </Routes>
     </div>
   )
