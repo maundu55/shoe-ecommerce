@@ -8,7 +8,7 @@ import {productsData} from '../data';
 
     const [products, setProducts] = useState(productsData);
 
-    return <ShopContextProvider>
+    return <ShopContextProvider value={{products}}>
         {children}
     </ShopContextProvider>
 }
