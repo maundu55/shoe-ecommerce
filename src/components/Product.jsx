@@ -4,7 +4,7 @@ import { FaEye } from 'react-icons/fa';
 import { ShopContext } from '../context/ShopContext';
 
 const Product = () => {
-  const {products} = useContext(ShopContext)
+  const {products, addToCart} = useContext(ShopContext)
   return (
     <>
     <div className='mt-10'>
@@ -20,7 +20,7 @@ const Product = () => {
               <img src={image} alt="" className='w-full h-64 transform scale-90 transition-transform duration-300 hover:scale-100' />
               <div className='absolute top-1/2 left-1/2 flex -translate-x-1/2 translate-y-1/2 gap-3 opacity-0 transition-opacity duration-300 hover:opacity-100'>
               <button className='bg-red-500 text-white p-4 rounded-full transition-colors duration-300 hover:bg-red-600 flex items-center justify-center'>
-                <BiCartAdd className='text-2xl' />
+                <BiCartAdd onClick={()=> addToCart(product, id)} className='text-2xl' />
                 </button>
               <button className='bg-red-500 text-white p-4 rounded-full transition-colors duration-300 hover:bg-red-600 flex items-center justify-center'> 
                 <FaEye className='text-2xl' />

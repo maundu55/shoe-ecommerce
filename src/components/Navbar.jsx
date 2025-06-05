@@ -1,7 +1,10 @@
 import React from 'react'
 import { BiCart, BiSearch, BiUser } from 'react-icons/bi'
+import { useContext } from 'react';
+import { ShopContext } from '../context/ShopContext';
 
 const Navbar = () => {
+  const {quantity} = useContext(ShopContext);
   return (
     <div>
       <div className='navbar flex justify-between items-center px-14 py-6 w-full z-50 transiton-all duration-500 bg-gradient-to-r from-[#0f0fd7] via-[#2c67f2] to-[#00d4ff]'> 
@@ -14,7 +17,7 @@ const Navbar = () => {
         </div>
         <div className=' relative flex items-center space-x-8'>
           <BiCart className=' text-3xl text-white'/>
-          <span className='absolute -top-2 right-5 bg-red-500 text-white text-xs h-5 w-5 flex items-center justify-center rounded-full'>0</span>
+          <span className='absolute -top-2 right-5 bg-red-500 text-white text-xs h-5 w-5 flex items-center justify-center rounded-full'>{quantity}</span>
           <BiUser className='text-3xl text-white'/>
         </div>
       </div>
