@@ -23,11 +23,36 @@ import {productsData} from '../data';
                 } else{
                     return item;
                 }
-            })
+            });
+            setCart(newCart);
+        }else {
+            setCart([...cart, newItem])
         }
     }
 
-    return <ShopContext.Provider value={{products}}>
+    useEffect(() => {
+        const total = cart.reduce((accumulator, currentItem)=>{
+            const priceAsNumber = parseFloat(currentItem.price)
+            if(isNaN(priceAsNumber)){
+                return accumulator;
+            }else {
+                return accumulator + (priceAsNumber * currentItem.amount);
+            }
+        }, 0);
+        setTotalPrice(total);
+    },[cart]);
+
+    useEffect(() => {
+        if(cart){
+            const amount = cart.reduce((accumulator, currentItem)=>{
+                return accumulator + currentItem.amount;
+            }, 0)
+            setQuantity(amount);
+        }
+
+   }, [cart]);
+
+    return <ShopContext.Provider value={{products, addToCart, cart, quantity, totalPrice}}>
         {children}
     </ShopContext.Provider>
 }
